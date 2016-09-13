@@ -1,6 +1,13 @@
-
+function sizeChange() {
+        d3.select("g").attr("transform", "scale(" + $("#container_2d").width()/900 + ")");
+        $("svg").height($("#container_2d").width()*0.618);
+    }
+d3.select(window)
+    .on("resize", sizeChange);
 var ref_count_set = new Firebase('https://firstproject-a737a.firebaseio.com/final-state-count');
 ref_count_set.on('value', function (snapshot) {
+    
+    
     var data = snapshot.val();
 //    for(var i in data) {
 //        console.log(data[i]['count']);
@@ -39,7 +46,7 @@ ref_count_set.on('value', function (snapshot) {
 //                list.push(tmp);
 //            }
 //        console.log("list:" + list[0][0]);
-            var width = 400, height = 300;
+            var width = 960, height = 500;
             var projection = d3.geo.albersUsa();//shiyuxin
             // Setting color domains(intervals of values) for our map
 
@@ -57,7 +64,8 @@ ref_count_set.on('value', function (snapshot) {
             var svg = d3.select("#container_2d").append("svg")
                     .attr("width", width)
                     .attr("height", height)
-                    .style("margin", "10px auto");
+                    .style("margin", "10px auto")
+                    .append("g");
 
 
             var path = d3.geo.path()
