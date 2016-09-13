@@ -50,11 +50,11 @@ ref_count_set.on('value', function (snapshot) {
                     .domain(color_domain)
                     .range(["#dcdcdc", "#d0d6cd", "#bdc9be", "#aabdaf", "#97b0a0", "#84a491", "719782", "#5e8b73", "#4b7e64", "#387255", "#256546", "#125937", "#004d28"]);
 
-            var div = d3.select("#container_3d").append("div")
-                    .attr("class", "container_2d")
+            var div = d3.select("#container_2d").append("div")
+                    .attr("class", "tooltip")
                     .style("opacity", 0);
 
-            var svg = d3.select("#container_3d").append("svg")
+            var svg = d3.select("#container_2d").append("svg")
                     .attr("width", width)
                     .attr("height", height)
                     .style("margin", "10px auto");
