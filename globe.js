@@ -345,9 +345,11 @@ DAT.Globe = function(container, colorFn) {
 
     function onWindowResize( event ) {
         console.log('resize');
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        // var canvas = document.querySelector('canvas');
+        // camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        // // camera.aspect = window.innerWidth/window.innerHeight;
+        // camera.updateProjectionMatrix();
+        // renderer.setSize( canvas.clientWidth, canvas.clientHeight );
     }
 
     function zoom(delta) {
