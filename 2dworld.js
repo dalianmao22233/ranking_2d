@@ -46,7 +46,7 @@ ref_count_set.on('value', function (snapshot) {
 //                list.push(tmp);
 //            }
 //        console.log("list:" + list[0][0]);
-            var width = 960, height = 500;
+            var width = 400, height = 500;
             // var width = $("#container_2d").width();
             // var height = $("#container_2d").height();
             // var width = 400, height = 500;
