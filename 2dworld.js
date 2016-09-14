@@ -46,11 +46,11 @@ ref_count_set.on('value', function (snapshot) {
 //                list.push(tmp);
 //            }
 //        console.log("list:" + list[0][0]);
-            var width = 400, height = 400;
+            var width = 500, height = 400;
             // var width = $("#container_2d").width();
             // var height = $("#container_2d").height();
             // var width = 400, height = 500;
-            console.log("width: " + width + ", height: " + height); 
+            // console.log("width: " + width + ", height: " + height); 
             var projection = d3.geo.albersUsa();//shiyuxin
             // Setting color domains(intervals of values) for our map
 
