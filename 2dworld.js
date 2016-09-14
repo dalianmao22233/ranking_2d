@@ -49,7 +49,7 @@ ref_count_set.on('value', function (snapshot) {
             // var width = 960, height = 500;
         //     var width = $("#container_2d").width();
         //     var height = $("#container_2d").height();
-        var width = 400px, height = 500px;
+        var width = 400, height = 400;
             console.log("width: " + width + ", height: " + height); 
             var projection = d3.geo.albersUsa();//shiyuxin
             // Setting color domains(intervals of values) for our map
