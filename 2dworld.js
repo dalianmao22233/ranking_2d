@@ -73,8 +73,8 @@ ref_count_set.on('value', function (snapshot) {
                     .attr("width", width)
                     .attr("height", height)
                     .style("margin", "10px auto")
-                    .append("g")
-                    .attr("transform", "scale(" + $("#container_2d").width()/900 + ")");
+                    .append("g");
+                    // .attr("transform", "scale(" + $("#container_2d").width()/900 + ")");
 
             var path = d3.geo.path()
 
