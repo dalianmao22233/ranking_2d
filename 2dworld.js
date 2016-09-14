@@ -73,8 +73,8 @@ ref_count_set.on('value', function (snapshot) {
                     .attr("width", width)
                     .attr("height", height)
                     .style("margin", "10px auto")
-                    .append("g");
-
+                    .append("g")
+                    .attr("transform", "scale(" + $("#container_2d").width()/900 + ")");
 
             var path = d3.geo.path()
 
@@ -147,7 +147,6 @@ ref_count_set.on('value', function (snapshot) {
                         .data(places)
                         .enter().append("circle", ".pin")
                         .attr("r", 3)
-                        .attr("transform", "scale(" + $("#container_2d").width()/900 + ")")
                         .attr("transform", function (d) {
 //                    return "translate(" + projection([
 //                                d.location.longitude,
@@ -155,7 +154,8 @@ ref_count_set.on('value', function (snapshot) {
 //                            ]) + ")";
                             return "translate(" + projection([d[0], d[1]]) + ")";
 //                    return "translate(" + projection(d[2]) + ")";
-                        });
+                        })
+                        .attr("transform", "scale(" + $("#container_2d").width()/900 + ")");
 
 
             }; // <-- End of Choropleth drawing
