@@ -46,7 +46,7 @@ ref_count_set.on('value', function (snapshot) {
 //                list.push(tmp);
 //            }
 //        console.log("list:" + list[0][0]);
-            var width = 400, height = 500;
+            var width = 400, height = 400;
             // var width = $("#container_2d").width();
             // var height = $("#container_2d").height();
             // var width = 400, height = 500;
@@ -147,6 +147,7 @@ ref_count_set.on('value', function (snapshot) {
                         .data(places)
                         .enter().append("circle", ".pin")
                         .attr("r", 3)
+                        .attr("transform", "scale(" + $("#container_2d").width()/900 + ")")
                         .attr("transform", function (d) {
 //                    return "translate(" + projection([
 //                                d.location.longitude,
@@ -168,12 +169,14 @@ ref_count_set.on('value', function (snapshot) {
             var ls_w = 20, ls_h = 20;
 
             legend.append("rect")
+
                     .attr("x", 20)
                     .attr("y", function (d, i) {
                         return height - (i * ls_h) - 2 * ls_h;
                     })
                     .attr("width", ls_w)
                     .attr("height", ls_h)
+                    .attr("transform", "scale(" + $("#container_2d").width()/900 + ")")
                     .style("fill", function (d, i) {
                         return color(d);
                     })
@@ -184,6 +187,7 @@ ref_count_set.on('value', function (snapshot) {
                     .attr("y", function (d, i) {
                         return height - (i * ls_h) - ls_h - 4;
                     })
+                    .attr("transform", "scale(" + $("#container_2d").width()/900 + ")")
                     .text(function (d, i) {
                         return legend_labels[i];
                     });
