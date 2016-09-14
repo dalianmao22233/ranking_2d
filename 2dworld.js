@@ -1,9 +1,9 @@
-function sizeChange() {
-        d3.select("g").attr("transform", "scale(" + $("#container_2d").width()/900 + ")");
-        $("svg").height($("#container_2d").width()*0.618);
-    }
-d3.select(window)
-    .on("resize", sizeChange);
+// function sizeChange() {
+//         d3.select("g").attr("transform", "scale(" + $("#container_2d").width()/900 + ")");
+//         $("svg").height($("#container_2d").width()*0.618);
+//     }
+// d3.select(window)
+//     .on("resize", sizeChange);
 var ref_count_set = new Firebase('https://firstproject-a737a.firebaseio.com/final-state-count');
 ref_count_set.on('value', function (snapshot) {
     
@@ -47,9 +47,9 @@ ref_count_set.on('value', function (snapshot) {
 //            }
 //        console.log("list:" + list[0][0]);
             // var width = 960, height = 500;
-        //     var width = $("#container_2d").width();
-        //     var height = $("#container_2d").height();
-        var width = 400, height = 400;
+            // var width = $("#container_2d").width();
+            // var height = $("#container_2d").height();
+            var width = 400, height = 500;
             console.log("width: " + width + ", height: " + height); 
             var projection = d3.geo.albersUsa();//shiyuxin
             // Setting color domains(intervals of values) for our map
@@ -116,8 +116,8 @@ ref_count_set.on('value', function (snapshot) {
 
                         //Adding mouseevents
                         .on("mouseover", function (d) {
-                            d3.select(this).transition().duration(300).style("opacity", 1);
-                            div.transition().duration(300)
+                            d3.select(this).transition().duration(200).style("opacity", 1);
+                            div.transition().duration(200)
                                     .style("opacity", 1)
 //                    div.text(nameById[d.id] + " : " + rateById[d.id])
 //                            .style("left", (d3.event.pageX) + "px")
@@ -128,9 +128,9 @@ ref_count_set.on('value', function (snapshot) {
                         })
                         .on("mouseout", function () {
                             d3.select(this)
-                                    .transition().duration(300)
+                                    .transition().duration(200)
                                     .style("opacity", 0.8);
-                            div.transition().duration(300)
+                            div.transition().duration(200)
                                     .style("opacity", 0);
                         })
 
