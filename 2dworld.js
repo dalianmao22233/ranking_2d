@@ -46,10 +46,10 @@ ref_count_set.on('value', function (snapshot) {
 //                list.push(tmp);
 //            }
 //        console.log("list:" + list[0][0]);
-            // var width = 960, height = 500;
+            var width = 960, height = 500;
             // var width = $("#container_2d").width();
             // var height = $("#container_2d").height();
-            var width = 400, height = 500;
+            // var width = 400, height = 500;
             console.log("width: " + width + ", height: " + height); 
             var projection = d3.geo.albersUsa();//shiyuxin
             // Setting color domains(intervals of values) for our map
@@ -64,6 +64,10 @@ ref_count_set.on('value', function (snapshot) {
             var div = d3.select("#container_2d").append("div")
                     .attr("class", "tooltip")
                     .style("opacity", 0);
+
+            // d3.select("g").attr("transform", "scale(" + $("#container_2d").width()/900 + ")");
+            // $("svg").height($("#container_2d").width()*0.618);
+
 
             var svg = d3.select("#container_2d").append("svg")
                     .attr("width", width)
@@ -96,12 +100,13 @@ ref_count_set.on('value', function (snapshot) {
                     rateById[i] = +data[i].count;
                     nameById[i] = data[i].name;
                 }
-                console.log(rateById);
+                // console.log(rateById);
                 var places = list;
                 //Drawing Choropleth
 
                 svg.append("g")
                         .attr("class", "region")
+                        .attr("transform", "scale(" + $("#container_2d").width()/900 + ")")
                         .selectAll("path")
                         .data(topojson.feature(us, us.objects.counties).features)
                         //.data(topojson.feature(map, map.objects.russia).features) <-- in case topojson.v1.js
